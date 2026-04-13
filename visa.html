@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Gift's $200 Visa Card | Personal Gift</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0A0E29;
+            background-image: 
+                radial-gradient(ellipse 100% 60% at 50% -10%, rgba(100, 149, 237, 0.4) 0%, transparent 60%),
+                radial-gradient(ellipse 80% 50% at 20% 20%, rgba(65, 105, 225, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 100% at 50% 50%, #1a237e 0%, #0A0E29 100%);
+            color: #FFFFFF;
+            min-height: 100vh;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .aurora {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            background: 
+                conic-gradient(from 180deg at 50% 0%, 
+                    transparent 0deg, 
+                    rgba(100, 149, 237, 0.15) 30deg, 
+                    transparent 60deg,
+                    rgba(100, 149, 237, 0.1) 90deg,
+                    transparent 120deg);
+            opacity: 0.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: rgba(229, 209, 147, 0.8);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: rgba(10, 14, 41, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(229, 209, 147, 0.2);
+        }
+
+        .back-link:hover {
+            color: #E5D193;
+            background: rgba(10, 14, 41, 0.8);
+            border-color: rgba(229, 209, 147, 0.5);
+            transform: translateX(-3px);
+        }
+
+        .urgency-bar {
+            background: linear-gradient(90deg, rgba(26, 35, 126, 0.9) 0%, #E5D193 100%);
+            color: #0A0E29;
+            padding: 16px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 50px;
+            border-radius: 16px;
+            animation: pulse 2.5s infinite;
+            box-shadow: 0 8px 30px rgba(229, 209, 147, 0.3);
+            border: 1px solid rgba(229, 209, 147, 0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
+        }
+
+        .main-content {
+            text-align: center;
+            background: rgba(10, 14, 41, 0.5);
+            backdrop-filter: blur(30px);
+            border-radius: 40px;
+            padding: 60px 50px;
+            border: 1px solid rgba(229, 209, 147, 0.2);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(100, 149, 237, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .headline {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+            letter-spacing: -0.5px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .subheadline {
+            color: rgba(255,255,255,0.75);
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .personal-touch {
+            display: inline-block;
+            background: rgba(229, 209, 147, 0.1);
+            border: 1px solid rgba(229, 209, 147, 0.3);
+            padding: 12px 24px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            color: #E5D193;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .stats-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(229, 209, 147, 0.15);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .stats-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #283593, #E5D193, #283593);
+            background-size: 200% 100%;
+            animation: gradient-shift 3s linear infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .timer {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #E5D193;
+            margin-bottom: 35px;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(229, 209, 147, 0.3);
+            font-family: 'Courier New', monospace;
+        }
+
+        .claimed-section {
+            margin-top: 30px;
+        }
+
+        .claimed-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        .claimed-number {
+            color: #E5D193;
+            font-weight: 700;
+            font-size: 1.3em;
+        }
+
+        .progress-container {
+            background: rgba(255,255,255,0.1);
+            height: 18px;
+            border-radius: 9px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(229, 209, 147, 0.2);
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #283593 0%, #E5D193 100%);
+            border-radius: 9px;
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(229, 209, 147, 0.4);
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .image-showcase {
+            margin: 60px auto;
+            position: relative;
+            max-width: 420px;
+            perspective: 1000px;
+        }
+
+        .image-frame {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .image-showcase:hover .image-frame {
+            transform: rotateY(-5deg) rotateX(5deg) translateY(-10px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(229, 209, 147, 0.3), 0 0 40px rgba(229, 209, 147, 0.15);
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .image-showcase:hover .card-image {
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(229, 209, 147, 0.5), 0 0 60px rgba(229, 209, 147, 0.25);
+        }
+
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, rgba(229, 209, 147, 0.4), rgba(229, 209, 147, 0.1), rgba(229, 209, 147, 0.4));
+            border-radius: 30px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .image-showcase:hover .image-frame::before {
+            opacity: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #E5D193 0%, #d4c483 100%);
+            color: #0A0E29;
+            text-decoration: none;
+            padding: 24px 60px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(229, 209, 147, 0.4), 0 0 40px rgba(229, 209, 147, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(229, 209, 147, 0.5), 0 0 50px rgba(229, 209, 147, 0.3);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .personal-footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(229, 209, 147, 0.2);
+        }
+
+        .personal-message {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            font-style: italic;
+        }
+
+        .guarantee {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .headline { font-size: 2rem; }
+            .timer { font-size: 2.2rem; }
+            .cta-button { 
+                width: 100%; 
+                padding: 22px 30px;
+                font-size: 1.15rem;
+            }
+            .main-content {
+                padding: 40px 25px;
+                border-radius: 30px;
+            }
+            .image-showcase {
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="aurora"></div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Selection</a>
+        
+        <div class="urgency-bar">
+            ⚡ Mr Gift's Personal Offer: Limited cards left from my collection
+        </div>
+
+        <div class="main-content">
+            <div class="personal-touch">🎁 A Personal Gift From Mr Gift</div>
+            <h1 class="headline">I'm Giving Away This $200 Visa Card</h1>
+            <p class="subheadline">I have this beautiful navy and gold Visa card for someone who needs it. It works everywhere, and I'd love to send it your way.</p>
+
+            <div class="stats-container">
+                <div class="timer" id="timer">1d 3h 34m</div>
+                
+                <div class="claimed-section">
+                    <div class="claimed-text">
+                        <span class="claimed-number" id="claimed-count">126</span> / 200 people I've already helped
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar" style="width: 63%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-showcase">
+                <div class="image-frame">
+                    <img src="visa.jpg" alt="$200 Visa Gift Card" class="card-image">
+                </div>
+            </div>
+
+            <a href="https://lockerpreview.com/cl/v/6n9n7m?preview=1" class="cta-button">
+                Claim Now
+            </a>
+
+            <div class="personal-footer">
+                <p class="personal-message">"I chose this elegant design because everyone deserves something nice. If this finds its way to you, I hope it helps."</p>
+                <div class="guarantee">
+                    <span>🛡️</span> I'll handle this personally with full security
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateTimer() {
+            const now = new Date();
+            const endDate = new Date(now.getTime() + (27 * 60 * 60 * 1000) + (34 * 60 * 1000));
+            
+            function calculate() {
+                const current = new Date();
+                const diff = endDate - current;
+                
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    
+                    document.getElementById('timer').textContent = `${days}d ${hours}h ${minutes}m`;
+                }
+            }
+            
+            calculate();
+            setInterval(calculate, 60000);
+        }
+
+        let claimed = 126;
+        const maxClaims = 200;
+        const claimedElement = document.getElementById('claimed-count');
+        const progressBar = document.getElementById('progress-bar');
+
+        function updateClaimed() {
+            if (claimed < maxClaims) {
+                const increment = Math.floor(Math.random() * 3) + 1;
+                claimed = Math.min(claimed + increment, maxClaims);
+                
+                claimedElement.textContent = claimed;
+                const percentage = (claimed / maxClaims) * 100;
+                progressBar.style.width = percentage + '%';
+                
+                const nextUpdate = Math.random() * 30000 + 15000;
+                setTimeout(updateClaimed, nextUpdate);
+            }
+        }
+
+        updateTimer();
+        setTimeout(updateClaimed, 20000);
+    </script>
+</body>
+</html>
